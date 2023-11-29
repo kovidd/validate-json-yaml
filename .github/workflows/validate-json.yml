@@ -8,7 +8,7 @@ on:
 
 jobs:
   validate_json_schema:
-    runs-on: [self-hosted, cosmos-prod]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -25,6 +25,3 @@ jobs:
       - name: Validate JSON files
         run: |
           python validate-json.py
-
-
-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
