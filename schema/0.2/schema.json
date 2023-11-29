@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/dimension",
+  "definitions": {
+      "dimension": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "version": {
+                  "type": "string"
+              },
+              "dimensions": {
+                  "$ref": "#/definitions/dimensions"
+              }
+          },
+          "required": [
+              "dimensions",
+              "version"
+          ],
+          "title": "dimension"
+      },
+      "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "length": {
+                  "type": "string",
+                  "format": "integer"
+              },
+              "width": {
+                  "type": "string",
+                  "format": "integer"
+              },
+              "height": {
+                  "type": "string",
+                  "format": "integer"
+              }
+          },
+          "required": [
+              "height",
+              "length",
+              "width"
+          ],
+          "title": "dimensions"
+      }
+  }
+}

@@ -1,0 +1,30 @@
+name: validate-json
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+  push:
+    branches: [main]
+
+jobs:
+  validate_json_schema:
+    runs-on: [self-hosted, cosmos-prod]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.6
+
+      - name: Install dependencies
+        run: pip install --root-user-action=ignore jsonschema==4.20.0
+
+      - name: Validate JSON files
+        run: |
+          python validate-json.py
+
+
+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

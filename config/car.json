@@ -1,0 +1,37 @@
+{
+    "version": "0.1",
+    "mainTbl": [
+        {
+            "name": "John",
+            "dob": "05-02-1993",
+            "age": 34,
+            "gender": "male",
+            "vehicles": [
+                {
+                    "car": "BMW",
+                    "cost": "65000"
+                },
+                {
+                    "car": "Audi",
+                    "cost": "125000"
+                }
+            ]
+        },
+        {
+            "name": "Doe",
+            "dob": "04-02-2021",
+            "age": 37,
+            "gender": "female",
+            "vehicles": [
+                {
+                    "car": "Merc",
+                    "cost": "95000"
+                },
+                {
+                    "car": "Lucid",
+                    "cost": "257000"
+                }
+            ]
+        }
+    ]
+}

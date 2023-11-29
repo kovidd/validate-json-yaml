@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/cars",
+    "definitions": {
+        "cars": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "version": {
+                    "type": "string"
+                },
+                "mainTbl": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MainTbl"
+                    }
+                }
+            },
+            "required": [
+                "mainTbl",
+                "version"
+            ],
+            "title": "cars"
+        },
+        "MainTbl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "dob": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "vehicles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Vehicle"
+                    }
+                }
+            },
+            "required": [
+                "age",
+                "dob",
+                "gender",
+                "name",
+                "vehicles"
+            ],
+            "title": "MainTbl"
+        },
+        "Vehicle": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "car": {
+                    "type": "string"
+                },
+                "cost": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "car",
+                "cost"
+            ],
+            "title": "Vehicle"
+        }
+    }
+}
