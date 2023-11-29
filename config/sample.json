@@ -2,7 +2,7 @@
     "version": "0.2",
     "dimensions": {
         "length": "4",
-        "width": "5"
+        "width": "5",
         "height": "6"
       }
 }
