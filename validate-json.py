@@ -1,3 +1,4 @@
+import sys
 import json
 import jsonschema
 from jsonschema.exceptions import ValidationError
@@ -13,7 +14,7 @@ def validate_json(file_path):
     version = cfg.get("version")
     if version is None:
         print(f"Config {filename} is not valid as it is missing version attribute")
-        return False
+        return 1
 
     try:
         schema_path = f"schema/{version}/schema.json"
@@ -25,16 +26,20 @@ def validate_json(file_path):
     except ValidationError as e:
         print(f"Config {filename} is not valid. Exception: {e}")
         # raise ValueError("Not valid json.")
-        return False
+        return 1
 
-    return True
+    return 0
 
 
 def validate_directory():
+    errors = 0
     json_files = (file for file in Path("config/").rglob("*.json"))
     for file_path in json_files:
-        validate_json(str(file_path))
+        errors += validate_json(str(file_path))
+    return errors
 
 
 if __name__ == "__main__":
-    raise SystemExit(validate_directory())
+    errors = validate_directory()
+    print(f"Number of files that have issues: {errors}")
+    sys.exit(errors)
