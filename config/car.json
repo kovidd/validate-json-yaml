@@ -6,7 +6,7 @@
             "dob": "05-02-1993",
             "age": 34,
             "gender": "male",
-            "vehiles": [
+            "vehicles": [
                 {
                     "car": "BMW",
                     "cost": "65000"
